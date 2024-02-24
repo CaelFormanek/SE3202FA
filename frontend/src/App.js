@@ -1,6 +1,7 @@
 import './App.css';
-import RootInfoPage from './RootInfoPage';
+import EmailPass from './EmailPass';
 import ChooseVerification from './ChooseVerification';
+import RootInfoPage from './RootInfoPage';
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -14,7 +15,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<ChooseVerification />} />
+        <Route exact path="/" element={<EmailPass />} />
+        <Route exact path="/verificationmethod" element={<ChooseVerification />} />
         <Route path="/rootinfo" element={<RootInfoPage />} />
       </Routes>
     </Router>
