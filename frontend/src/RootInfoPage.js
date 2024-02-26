@@ -42,7 +42,7 @@ function RootInfoPage() {
         </div>
         
 
-        <button className="checkrootaccessbutton">Check Root Access</button>
+        <a href='http://localhost:3000/accountlinked'><button className="checkrootaccessbutton">Check Root Access</button></a>
       </div>
     </div>
   );
