@@ -3,6 +3,9 @@ import EmailPass from './EmailPass';
 import ChooseVerification from './ChooseVerification';
 import RootInfoPage from './RootInfoPage';
 import AccountLinked from './AccountLinked';
+import CloudBoard from './CloudBoard';
+import FakeRootInfoPage from './FakeRootInfoPage';
+
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -19,7 +22,9 @@ function App() {
         <Route exact path="/" element={<EmailPass />} />
         <Route exact path="/verificationmethod" element={<ChooseVerification />} />
         <Route path="/rootinfo" element={<RootInfoPage />} />
-        <Route path="/AccountLinked" element={<AccountLinked />} />
+        <Route path="/accountlinked" element={<AccountLinked />} />
+        <Route path="/cloudboard" element={<CloudBoard />} />
+        <Route path="/fakerootinfo" element={<FakeRootInfoPage />} />
       </Routes>
     </Router>
   );

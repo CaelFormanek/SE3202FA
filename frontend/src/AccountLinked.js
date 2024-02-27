@@ -14,7 +14,7 @@ function AccountLinked() {
         <div className='message2'>A secret key file on your system has been created.</div>
         <div className='message3'>You will be redirected to provide root information to confirm your linkage.</div>
         <div className='message4'>This is a one time process, and you will only be asked one time once your account linkage is confirmed.</div>
-        <a href='http://localhost:3000/rootinfo'><button className='redirecting'>Confirm Linkage</button></a>
+        <a href='http://localhost:3000/fakerootinfo'><button className='redirecting'>Confirm Linkage</button></a>
       </div>
     </div>
   );
