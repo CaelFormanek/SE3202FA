@@ -1,0 +1,29 @@
+
+
+.LogOutPage {
+  text-align: center;
+  padding: 20px;
+}
+
+.LogOutPage h1 {
+  color: blue; /* Set the color of the heading text to blue */
+}
+
+.LogOutPage p {
+  color: blue; /* Set the color of the paragraph text to blue */
+  margin-bottom: 20px;
+}
+
+.LogOutPage button {
+  background-color: blue; /* Set the background color of the button to blue */
+  color: white; /* Set the text color of the button to white */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px; /* Add margin to separate buttons */
+}
+
+.LogOutPage button:hover {
+  background-color: darkblue; /* Change button color on hover */
+}
