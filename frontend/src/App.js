@@ -6,7 +6,6 @@ import AccountLinked from './AccountLinked';
 import CloudBoard from './CloudBoard';
 import FakeRootInfoPage from './FakeRootInfoPage';
 import LogOutPage from './LogOutPage';
-
 import React from 'react';
 import {
   BrowserRouter as Router,
