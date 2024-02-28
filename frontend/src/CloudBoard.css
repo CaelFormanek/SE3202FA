@@ -1,0 +1,46 @@
+.CloudBoard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.optionbar {
+  height: 100px;
+  border-style: ridge;
+  width: 100%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  color: darkblue;
+  font-weight: bold;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.welcome {
+  width: 800px;
+  height: 700px;
+}
+
+.cloudservicesbar {
+  margin-left: 530px;
+}
+
+.contactteammember, .setupnetwork, .createdatabase {
+  margin-left: 40px;
+}
+
+.md-60 {
+  color: gray;
+  margin-left: 30px;
+  font-weight: bold !important;
+  font-size: 40px !important;
+}
+
+.md-48 {
+  color: gray;
+  margin-left: 30px;
+  font-weight: bold !important;
+  font-size: 40px !important;
+  margin-left: 20px;
+}

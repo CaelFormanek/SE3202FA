@@ -1,25 +1,8 @@
-.EmailPass {
+.FakeRootInfoPage {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.contentdiv {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: ridge;
-  border-radius: 5px;
-  border-style:ridge;
-  border-color: rgba(0, 0, 0, 0.366);
-  margin-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 50px;
-  padding-right: 50px;
-  width: 800px;
-  height: 600px;
 }
 
 .buttonsandinput {
@@ -29,19 +12,18 @@
   margin-bottom: 25px;
 }
 
-.cloudlogo {
+.logoimage {
   width: 570px;
-  height: 300px;
-  margin-top: 10px;
+  height: 400px;
 }
 
-.emailheader, .enterpasswordheader {
+.usernameheader, .enterpasswordheader {
   font-size: 20px;
   margin-bottom: 3px;
   font-weight: bold;
 }
 
-.usernameinput, .enterpasswordinput, .signinbutton {
+.usernameinput, .enterpasswordinput, .registerbutton {
   width: 550px;
   height: 50px;
   border-radius: 10px;
@@ -68,21 +50,17 @@
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-.signinbutton {
+.checkrootaccessbutton {
   width: 560px;
   height: 60px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 255, 0.457);
+  box-shadow: 3px 3px 3px black;
   margin-top: 40px;
   background-color: white;
   font-size: 30px;
   font-weight: bold;
 }
 
-.signinbutton:hover {
-  box-shadow: 3px 3px 3px rgba(0, 0, 255, 0.3);
+.checkrootaccessbutton:hover {
+  box-shadow: 3px 3px 3px gray;
   cursor: pointer;
-}
-
-.arrow {
-  font-size: 40px !important;
 }

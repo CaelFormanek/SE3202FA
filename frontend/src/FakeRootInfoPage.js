@@ -1,9 +1,9 @@
-import './RootInfoPage.css';
+import './FakeRootInfoPage.css';
 import lock from './Images/lock.png'
 import React, { useState } from 'react';
 
 
-function RootInfoPage() {
+function FakeRootInfoPage() {
 
   // https://www.geeksforgeeks.org/how-to-show-and-hide-password-in-reactjs/
   const [password, setPassword] = useState("");
@@ -22,7 +22,7 @@ function RootInfoPage() {
   }
   
   return (
-    <div className="RootInfoPage">
+    <div className="FakeRootInfoPage">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       <img className="logoimage" src={lock} ></img>
 
@@ -42,11 +42,10 @@ function RootInfoPage() {
         </div>
         
 
-        <a href='http://localhost:3000/accountlinked'><button className="checkrootaccessbutton">Check Root Access</button></a>
-        <button className="checkrootaccessbutton">Check Root Access</button>
+        <a href='http://localhost:3000/cloudboard'><button className="checkrootaccessbutton">Check Root Access</button></a>
       </div>
     </div>
   );
 }
 
-export default RootInfoPage;
+export default FakeRootInfoPage;
