@@ -1,3 +1,5 @@
+import './LogOutPage.css'
+import './CloudBoard.css';
 import welcome from './Images/welcome.png';
 import logoutIcon from './Images/logout.png';
 import helpIcon from './Images/Help.png';
@@ -14,22 +16,32 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
-
-function CloudBoard() {
-
+function LogOutPage() {
   const navigate = useNavigate();
+  const [isLoggedOut, setIsLoggedOut] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleLogout = () => {
-      // You can add additional logic here before navigating to the logout page
-      navigate('/logout');
-    };
-
-    const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const handleLogout = () => {
+    // add logic here for two-factor authentication system
+    setIsLoggedOut(true);
   };
 
+  const handleReturnToLogin = () => {
+    // You can add additional logic here before navigating back to the login page
+    navigate('/rootinfo');
+  };
+
+  const handleMenuClick = () => {
+  setIsMenuOpen(!isMenuOpen);
+};
+
+
+
+
+
   return (
+
+    <>
     <div className="CloudBoard">
       <div className='optionbar'>
         <img
@@ -69,10 +81,29 @@ function CloudBoard() {
       </Link>
       </div>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      <img className="welcome" src={welcome}></img>
+
 
     </div>
+
+    <div className="LogOutPage">
+      {isLoggedOut ? (
+        <div>
+          <h1>Logged Out Successfully</h1>
+          <p>You have been successfully logged out of the two-factor authentication software.</p>
+
+
+          <button onClick={handleReturnToLogin}>Return to Login</button>
+        </div>
+      ) : (
+        <div>
+          <h1>Two-Factor Authentication Logout</h1>
+          <p>Click the button below to log out:</p>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+      )}
+    </div>
+    </>
   );
 }
 
-export default CloudBoard;
+export default LogOutPage;

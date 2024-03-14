@@ -1,3 +1,5 @@
+import './CloudBoard.css';
+import './DeleteVerification.css';
 import welcome from './Images/welcome.png';
 import logoutIcon from './Images/logout.png';
 import helpIcon from './Images/Help.png';
@@ -14,22 +16,23 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
-
-function CloudBoard() {
+function DeleteVerificationPage() {
 
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleLogout = () => {
-      // You can add additional logic here before navigating to the logout page
-      navigate('/logout');
-    };
-
-    const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const handleLogout = () => {
+    // You can add additional logic here before navigating to the logout page
+    navigate('/logout');
   };
 
+  const handleMenuClick = () => {
+  setIsMenuOpen(!isMenuOpen);
+};
   return (
+    <>
+
+
     <div className="CloudBoard">
       <div className='optionbar'>
         <img
@@ -69,10 +72,27 @@ function CloudBoard() {
       </Link>
       </div>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      <img className="welcome" src={welcome}></img>
+
 
     </div>
+
+    <div>
+    <div className="centered-container">
+      <h2>Delete Verification</h2>
+      <section>
+
+
+      </section>
+      <section>
+        <h3> </h3>
+        <p>
+
+        </p>
+      </section>
+    </div>
+    </div>
+    </>
   );
 }
 
-export default CloudBoard;
+export default DeleteVerificationPage;

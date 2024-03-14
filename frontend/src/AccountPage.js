@@ -1,3 +1,5 @@
+import './CloudBoard.css';
+import './AccountPage.css';
 import welcome from './Images/welcome.png';
 import logoutIcon from './Images/logout.png';
 import helpIcon from './Images/Help.png';
@@ -14,22 +16,29 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
-
-function CloudBoard() {
+function AccountPage() {
 
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleLogout = () => {
-      // You can add additional logic here before navigating to the logout page
-      navigate('/logout');
-    };
+  const handleLogout = () => {
+    // You can add additional logic here before navigating to the logout page
+    navigate('/logout');
+  };
 
-    const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const handleMenuClick = () => {
+  setIsMenuOpen(!isMenuOpen);
+};
+  const userData = {
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+    phoneNumber: '123-456-7890',
   };
 
   return (
+    <>
+
+
     <div className="CloudBoard">
       <div className='optionbar'>
         <img
@@ -69,10 +78,20 @@ function CloudBoard() {
       </Link>
       </div>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      <img className="welcome" src={welcome}></img>
+
 
     </div>
+
+    <div>
+    <div className="centered-container">
+      <h2>Account Information</h2>
+      <p>Name: {userData.name}</p>
+      <p>Email: {userData.email}</p>
+      <p>Phone Number: {userData.phoneNumber}</p>
+    </div>
+    </div>
+    </>
   );
 }
 
-export default CloudBoard;
+export default AccountPage;
