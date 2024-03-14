@@ -1,5 +1,5 @@
-import './LogOutPage.css'
 import './CloudBoard.css';
+import './AboutUs.css';
 import welcome from './Images/welcome.png';
 import logoutIcon from './Images/logout.png';
 import helpIcon from './Images/Help.png';
@@ -16,32 +16,23 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
-function LogOutPage() {
+function AboutUsPage() {
+
   const navigate = useNavigate();
-  const [isLoggedOut, setIsLoggedOut] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = () => {
-    // add logic here for two-factor authentication system
-    setIsLoggedOut(true);
-  };
-
-  const handleReturnToLogin = () => {
-    // You can add additional logic here before navigating back to the login page
-    navigate('/rootinfo');
+    // You can add additional logic here before navigating to the logout page
+    navigate('/logout');
   };
 
   const handleMenuClick = () => {
   setIsMenuOpen(!isMenuOpen);
 };
-
-
-
-
-
   return (
-
     <>
+
+
     <div className="CloudBoard">
       <div className='optionbar'>
         <img
@@ -85,25 +76,25 @@ function LogOutPage() {
 
     </div>
 
-    <div className="LogOutPage">
-      {isLoggedOut ? (
-        <div>
-          <h1>Logged Out Successfully</h1>
-          <p>You have been successfully logged out of the two-factor authentication software.</p>
-
-
-          <button onClick={handleReturnToLogin}>Return to Login</button>
-        </div>
-      ) : (
-        <div>
-          <h1>Two-Factor Authentication Logout</h1>
-          <p>Click the button below to log out:</p>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-      )}
+    <div>
+    <div className="centered-container">
+      <h2>About Us</h2>
+      <section>
+        <h3>Mission Statement</h3>
+        <p>
+          Our mission is to provide secure and user-friendly authentication solutions, empowering individuals and organizations to protect their digital assets with confidence.
+        </p>
+      </section>
+      <section>
+        <h3>How We Differ</h3>
+        <p>
+          Our two-factor authentication (2FA) solution stands out from the rest by prioritizing simplicity without compromising security. We leverage cutting-edge technologies to deliver a seamless and robust authentication experience, setting us apart from traditional 2FA methods.
+        </p>
+      </section>
+    </div>
     </div>
     </>
   );
 }
 
-export default LogOutPage;
+export default AboutUsPage;
