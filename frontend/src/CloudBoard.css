@@ -14,21 +14,34 @@
   color: darkblue;
   font-weight: bold;
   display: flex;
+  padding: 10px;
   /* justify-content: center; */
   align-items: center;
+
 }
 .welcome {
   width: 800px;
   height: 700px;
 }
 
-.cloudservicesbar {
-  margin-left: 530px;
+.optionbar span {
+  margin-left: 15px;
+  margin-right: 15px; /* Adjust the margin as needed */
 }
 
-.contactteammember, .setupnetwork, .createdatabase {
-  margin-left: 40px;
+.optionbar .about-us-link {
+  padding-left: 50px; /* Adjust the left padding as needed */
 }
+
+.contactteammember, .setupnetwork, .createdatabase, .home-link {
+  margin-left:30px;
+}
+
+.logout-image{
+  margin-left: 10px;
+  margin-bottom: 13px;
+}
+
 
 .md-60 {
   color: gray;
@@ -43,4 +56,25 @@
   font-weight: bold !important;
   font-size: 40px !important;
   margin-left: 20px;
+}
+
+.material-symbols-outlined {
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f0f0f0;
+  transition: transform 0.3s ease;
+   /* Add margin to create space between "About Us" and the menu bar */
+  display: flex;
+  flex-direction: column; /* Make the sidebar options vertical */
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar .menu-items {
+  padding: 20px;
 }

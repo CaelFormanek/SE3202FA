@@ -1,5 +1,5 @@
-import './LogOutPage.css'
 import './CloudBoard.css';
+import './AccountPage.css';
 import welcome from './Images/welcome.png';
 import logoutIcon from './Images/logout.png';
 import helpIcon from './Images/Help.png';
@@ -16,32 +16,29 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
-function LogOutPage() {
+function AccountPage() {
+
   const navigate = useNavigate();
-  const [isLoggedOut, setIsLoggedOut] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = () => {
-    // add logic here for two-factor authentication system
-    setIsLoggedOut(true);
-  };
-
-  const handleReturnToLogin = () => {
-    // You can add additional logic here before navigating back to the login page
-    navigate('/rootinfo');
+    // You can add additional logic here before navigating to the logout page
+    navigate('/logout');
   };
 
   const handleMenuClick = () => {
   setIsMenuOpen(!isMenuOpen);
 };
-
-
-
-
+  const userData = {
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+    phoneNumber: '123-456-7890',
+  };
 
   return (
-
     <>
+
+
     <div className="CloudBoard">
       <div className='optionbar'>
         <img
@@ -85,25 +82,16 @@ function LogOutPage() {
 
     </div>
 
-    <div className="LogOutPage">
-      {isLoggedOut ? (
-        <div>
-          <h1>Logged Out Successfully</h1>
-          <p>You have been successfully logged out of the two-factor authentication software.</p>
-
-
-          <button onClick={handleReturnToLogin}>Return to Login</button>
-        </div>
-      ) : (
-        <div>
-          <h1>Two-Factor Authentication Logout</h1>
-          <p>Click the button below to log out:</p>
-          <button onClick={handleLogout}>Logout</button>
-        </div>
-      )}
+    <div>
+    <div className="centered-container">
+      <h2>Account Information</h2>
+      <p>Name: {userData.name}</p>
+      <p>Email: {userData.email}</p>
+      <p>Phone Number: {userData.phoneNumber}</p>
+    </div>
     </div>
     </>
   );
 }
 
-export default LogOutPage;
+export default AccountPage;
