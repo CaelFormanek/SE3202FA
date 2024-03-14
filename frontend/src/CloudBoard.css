@@ -14,14 +14,23 @@
   color: darkblue;
   font-weight: bold;
   display: flex;
+  /* justify-content: center; */
+  align-items: center;
   padding: 10px;
   /* justify-content: center; */
   align-items: center;
-
 }
 .welcome {
   width: 800px;
   height: 700px;
+}
+
+.cloudservicesbar {
+  margin-left: 530px;
+}
+
+.contactteammember, .setupnetwork, .createdatabase {
+  margin-left: 40px;
 }
 
 .optionbar span {

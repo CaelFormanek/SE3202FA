@@ -1,4 +1,3 @@
-import './CloudBoard.css';
 import welcome from './Images/welcome.png';
 import logoutIcon from './Images/logout.png';
 import helpIcon from './Images/Help.png';
