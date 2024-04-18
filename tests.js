@@ -1,5 +1,7 @@
 const request = require('supertest');
 const app = require('./server'); 
+const { encryptPassword, decryptPassword } = require('./encryption');
+
 
 describe('User Authentication Endpoints', () => {
   it('should authenticate a user successfully with valid credentials', async () => {
@@ -64,5 +66,14 @@ describe('User Authentication Endpoints', () => {
       .send({ username: 'invaliduser', password: 'invalidpass' });
     expect(res.statusCode).toEqual(401);
     expect(res.body.error).toEqual('Invalid username or password');
+  });
+});
+
+describe('Encryption Functions', () => {
+  it('should encrypt and decrypt a password correctly', () => {
+    const originalPassword = 'password123';
+    const encryptedPassword = encryptPassword(originalPassword);
+    const decryptedPassword = decryptPassword(encryptedPassword);
+    expect(decryptedPassword).toEqual(originalPassword);
   });
 });
