@@ -1,28 +1,35 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const cors = require('cors') 
 
 const app = express();
-const port = 3001; 
+const port = 3000; 
 
 // Middleware to parse JSON bodies
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(cors());
 
-// Dummy user data 
-const users = [
-  { id: 1, username: 'user', password: 'pass' },
-  { id: 2, username: 'user2', password: 'password2' },
-];
+let corsOptions = { 
+  origin : ['http://localhost:3000', 'http://localhost:3001'] 
+} 
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://dev:dev@cluster0.f8wrnuy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect();
+const users = client.db('users').collection('users'); 
 
 // Login endpoint
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
   const { username, password } = req.body;
   
-  // Dummy authentication
-  const user = users.find(u => u.username === username && u.password === password);
+  const user = await users.findOne({
+    'username': username,
+    'password': password
+  })
   
   if (user) {
     // If user is found, return a success message or token
-    res.json({ message: 'Login successful' });
+    res.status(200).json({ message: 'Login successful' });
   } else {
     // If user is not found, return an error message
     res.status(401).json({ error: 'Invalid username or password' });
@@ -112,6 +119,7 @@ app.put('/update-username', (req, res) => {
     res.status(401).json({ error: 'Invalid username or password' });
   }
 });
+
 
 // Start the server
 app.listen(port, () => {
